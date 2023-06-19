@@ -1,0 +1,29 @@
+.div_error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.p_error_active {
+  margin: 0.2em;
+  font-size: 0.9em;
+  color: red;
+}
+.p_error_inactive {
+  margin: 0.2em;
+
+  font-size: 0.9em;
+  color: greenyellow;
+}
+
+.input_default {
+  border-radius: 0.5em;
+}
+.input_active_errors {
+  border-radius: 0.5em;
+  border-color: red;
+}
+.input_inactive_errors {
+  border-radius: 0.5em;
+  border-color: greenyellow;
+}

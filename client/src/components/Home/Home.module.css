@@ -1,0 +1,33 @@
+/* Home.module.css */
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../assets/dog-4689169.jpg");
+  background-color: black;
+  color: white;
+}
+
+.content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchBar {
+  margin-bottom: 10px;
+}
+
+.filters {
+  margin-bottom: 10px;
+} */
+
+.currentPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  padding: 10em 10em 10em 10em;
+}

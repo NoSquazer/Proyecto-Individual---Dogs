@@ -1,0 +1,49 @@
+.error_container {
+  position: fixed;
+  top: 100px;
+  right: 0px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.3s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 100;
+  justify-content: flex-start;
+}
+
+.error {
+  border-top: 5px solid red;
+  border-left: 5px solid red;
+  border-bottom: 5px solid red;
+}
+
+.success {
+  border-top: 5px solid green;
+  border-left: 5px solid green;
+  border-bottom: 5px solid green;
+}
+
+.show {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.icon_good {
+  margin-right: 10px;
+  color: green;
+}
+
+.icon_notgood {
+  margin-right: 10px;
+  color: red;
+}
+
+.message {
+  margin: 0;
+}

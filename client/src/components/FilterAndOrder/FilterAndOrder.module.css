@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+  width: 100vw;
+  padding-top: 10px;
+}
+
+.div_isSelected {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  width: 100vw;
+}
+
+.title {
+  font-size: 16px;
+  color: white;
+  margin-right: 10px;
+}
+
+.select {
+  width: 200px;
+  height: 20px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  background-color: #ff6f43a2;
+  color: #999;
+  margin-bottom: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.select_filter {
+  width: 200px;
+  height: 20px;
+  border: none;
+  /* border-radius: 0 5px 5px 0; */
+  background-color: #ff6f43a2;
+  color: #999;
+  margin-bottom: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.select_temperament {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  border: none;
+  margin-left: 600px;
+  background-color: #ff6f43a2;
+  color: #999;
+  transition: background-color 0.3s ease;
+}
+
+.select:hover,
+.select_temperament:hover {
+  background-color: #ff7043;
+  color: #fff;
+}
+
+.select_filter:hover {
+  background-color: #ff7043;
+  color: #fff;
+}
+
+.select-temperament {
+  animation: fadeInOut 0.3s;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s;
+}
+
+.select-temperament.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 0.3s;
+}
+
+.select-order {
+  margin-top: 10px;
+}

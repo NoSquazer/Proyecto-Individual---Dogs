@@ -1,0 +1,87 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
+  border: 1px solid #ff7043;
+  padding: 20px;
+  margin: 20px;
+}
+
+.imageContainer {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.img_dog {
+  width: 20em;
+  height: 15em;
+  object-fit: cover;
+  border: 3px solid #ff6f43a2;
+}
+
+.img_dog:hover {
+  border: 3px solid #ff7043;
+}
+
+.h5_name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  background-color: #ff7043;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.h5_weight_temperament {
+  color: #fff;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button_close_and_fav {
+  border: 1px solid #222222;
+  width: 100%;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ff6f43a2;
+  transition: background-color 0.3s ease;
+}
+
+.button_close_and_fav:hover {
+  background-color: #ff7043;
+}
+
+.button_close_and_fav_active {
+  border: 1px solid #222222;
+  width: 100%;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ff7043;
+}
+
+.favorite_icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
