@@ -2,7 +2,7 @@ const { Dog, Temperament } = require("../../db.js");
 
 module.exports = async (req, res) => {
   try {
-    const { name, origin, height, weight, life_span, image, temperament } =
+    const { id, name, origin, height, weight, life_span, image, temperament } =
       req.body;
 
     if (!image || !name || !height || !weight || !life_span || !temperament)
@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
         name,
       },
       defaults: {
+        id,
         origin,
         height,
         weight,

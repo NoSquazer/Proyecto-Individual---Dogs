@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import Home from "./components/Home/Home.jsx";

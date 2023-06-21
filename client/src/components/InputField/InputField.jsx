@@ -17,13 +17,17 @@ const InputField = ({
   <>
     {focus && (
       <div className={styles.div_error}>
-        {Object.keys(error).map((prop, index) => {
-          return (
-            prop && (
-              <ErrorInput key={index} active={true} message={error[prop]} />
-            )
-          );
-        })}
+        {Object.keys(error).length > 1 ? (
+          Object.keys(error).map((prop, index) => {
+            return (
+              prop && (
+                <ErrorInput key={index} active={true} message={error[prop]} />
+              )
+            );
+          })
+        ) : (
+          <ErrorInput active={true} message={error} />
+        )}
       </div>
     )}
     <label htmlFor={name}>{name}</label>
@@ -35,7 +39,7 @@ const InputField = ({
       onChange={onChange}
       onFocus={onFocus}
       onBlur={onBlur}
-      className={!focus ? styles.input_default : className}
+      className={className}
     />
   </>
 );

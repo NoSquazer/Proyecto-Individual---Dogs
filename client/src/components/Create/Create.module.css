@@ -1,29 +1,52 @@
-.div_error {
+.div_container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #ff4e00, #000000);
+  height: 100vh;
+  padding: 20px;
 }
 
-.p_error_active {
-  margin: 0.2em;
-  font-size: 0.9em;
-  color: red;
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b1b1b;
+  padding: 20px;
+  border-top: 8px;
+  box-shadow: 0 0 10px rgba(29, 29, 29, 0.2);
+  width: 300px;
 }
-.p_error_inactive {
-  margin: 0.2em;
 
-  font-size: 0.9em;
-  color: greenyellow;
+.div_double_inputs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.input_default {
-  border-radius: 0.5em;
+.button_create {
+  background-color: #ff4e00;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
-.input_active_errors {
-  border-radius: 0.5em;
-  border-color: red;
+
+.button_create:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
-.input_inactive_errors {
-  border-radius: 0.5em;
-  border-color: greenyellow;
+
+.input_double_numbers {
+  width: 40px;
+}
+
+.h5_text {
+  color: #ffffff;
+  margin: 10px;
 }

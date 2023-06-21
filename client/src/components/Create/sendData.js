@@ -5,7 +5,10 @@ const sendData = async (dogData, setAlert) => {
     dogData;
 
   try {
+    let id = 500;
+
     const { data } = await axios.post("http://localhost:3001/dogs", {
+      id,
       name,
       origin: origin ? origin : "unknown",
       image: image
@@ -16,6 +19,8 @@ const sendData = async (dogData, setAlert) => {
       weight: `${weight.minWeight} - ${weight.maxWeight}`,
       life_span: `${lifeSpan.minLifeSpan} - ${lifeSpan.maxLifeSpan}`,
     });
+
+    id++;
 
     return setAlert({
       status: 200,

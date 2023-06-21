@@ -1,5 +1,5 @@
-const { Dog, Temperament } = require("../../db");
 const axios = require("axios");
+const { Dog, Temperament } = require("../../db");
 const dotenv = require("dotenv");
 dotenv.config({ path: "../.env" });
 const { api_key } = process.env;
@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     if (!id) return res.status(400).json({ error: "Missing data!" });
 
     const { data } = await axios.get(
-      `https://api.thedogapi.com/v1/breeds/${id}?${api_key}`
+      `https://api.thedogapi.com/v1/breeds/${id}?api_key=${api_key}`
     );
 
     if (data.name) {
@@ -35,17 +35,21 @@ module.exports = async (req, res) => {
     });
 
     if (dogFromDB) {
+      const temperamentsList = dogFromDB.Temperaments.map((temperament) => {
+        return temperament.name;
+      });
+
       const newDogsFromDB = {
         id: dogFromDB.id,
-        name: newDogsFromDB.name,
-        origin: newDogsFromDB.origin ? newDogsFromDB.origin : "unknown",
-        height: newDogsFromDB.height.metric,
-        weight: newDogsFromDB.weight.metric,
-        life_span: newDogsFromDB.life_span,
-        image: newDogsFromDB.image,
-        temperament: newDogsFromDB.Temperaments,
+        name: dogFromDB.name,
+        origin: dogFromDB.origin ? dogFromDB.origin : "unknown",
+        height: dogFromDB.height,
+        weight: dogFromDB.weight,
+        life_span: dogFromDB.life_span,
+        image: dogFromDB.image,
+        temperament: temperamentsList,
       };
-      return res.status(200).json(dogFromDB);
+      return res.status(200).json(newDogsFromDB);
     } else {
       return res.status(404).json({ error: "Not found!" });
     }

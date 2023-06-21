@@ -84,21 +84,13 @@ const reducer = (state = initialState, { type, payload }) => {
       if (order === "TEMPERAMENTS") {
         const filteredDogs = state.dogs.filter((dog) => {
           if (dog.temperament) {
-            if (typeof dog.temperament === "string") {
-              return dog.temperament === temperament;
-            } else {
-              return dog.temperament.includes(temperament);
-            }
+            return dog.temperament.includes(temperament);
           }
         });
 
         const filteredFavoriteDogs = state.favoriteDogs.filter((dog) => {
           if (dog.temperament) {
-            if (typeof dog.temperament === "string") {
-              return dog.temperament === temperament;
-            } else {
-              return dog.temperament.includes(temperament);
-            }
+            return dog.temperament.includes(temperament);
           }
         });
 

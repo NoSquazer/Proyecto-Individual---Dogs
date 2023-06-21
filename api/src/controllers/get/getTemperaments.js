@@ -11,15 +11,25 @@ module.exports = async (req, res) => {
     if (temperamentsList.length) return res.status(200).json(temperamentsList);
     else {
       const { data } = await axios.get(
-        `https://api.thedogapi.com/v1/breeds?${api_key}`
+        `https://api.thedogapi.com/v1/breeds?api_key=${api_key}`
       );
       const apiTemperametsList = data
+        .filter((dog) => {
+          return dog.temperament;
+        })
         .map((value) => {
           return value.temperament;
-        })
-        .filter((temperament) => temperament);
+        });
 
-      const temperamentsToCreate = apiTemperametsList.map((name) => ({ name }));
+      const joinedTemperaments = apiTemperametsList.join(", ");
+
+      const duplicatedTemperaments = [
+        ...new Set(joinedTemperaments.split(", ")),
+      ];
+
+      const temperamentsToCreate = duplicatedTemperaments.map((name) => ({
+        name,
+      }));
 
       const savedTemperaments = await Temperament.bulkCreate(
         temperamentsToCreate

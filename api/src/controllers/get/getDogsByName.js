@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
     });
 
     const { data } = await axios.get(
-      `https://api.thedogapi.com/v1/breeds?${api_key}`
+      `https://api.thedogapi.com/v1/breeds?api_key=${api_key}`
     );
     const apiDogsList = data.filter((dog) => {
       return dog.name.toLowerCase().includes(name.toLowerCase());
@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
         height: dog.height.metric,
         weight: dog.weight.metric,
         life_span: dog.life_span,
-        image: `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg?${apiDogsList}`,
+        image: `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg?api_key=${api_key}`,
         temperament: dog.temperament ? dog.temperament : "unknown",
       };
     });
@@ -60,8 +60,6 @@ module.exports = async (req, res) => {
     const uniqueDogsFromDB = newDogsFromDB.filter((dbDog) => {
       return !newDogsFromAPI.some((apiDog) => apiDog.name === dbDog.name);
     });
-
-    console.log([...newDogsFromAPI, ...uniqueDogsFromDB]);
 
     return res.status(200).json([...newDogsFromAPI, ...uniqueDogsFromDB]);
   } catch (error) {

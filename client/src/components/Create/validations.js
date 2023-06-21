@@ -39,7 +39,7 @@ const validateForm = (
     newError.height.isEmpty = "Cannot be empty.";
   }
 
-  if (+weight.maxWeight < +weight.minWeight) {
+  if (weight.maxWeight < weight.minWeight) {
     newError.weight.isMinor =
       "The minimum weight cannot be more than the maxinum.";
   }
@@ -47,7 +47,7 @@ const validateForm = (
     newError.weight.isEmpty = "Cannot be empty.";
   }
 
-  if (+lifeSpan.maxLifeSpan < +lifeSpan.minLifeSpan)
+  if (lifeSpan.maxLifeSpan < lifeSpan.minLifeSpan)
     newError.lifeSpan.isMinor =
       "The minimum lifeSpan cannot be more than the maxinum.";
   if (lifeSpan.maxLifeSpan <= 0 || lifeSpan.minLifeSpan <= 0) {

@@ -35,7 +35,7 @@ const CurrentPage = ({ dogs }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.cardsContainer}>
+      <div>
         <Cards dogs={currentCards} />
       </div>
       {dogs.length ? (

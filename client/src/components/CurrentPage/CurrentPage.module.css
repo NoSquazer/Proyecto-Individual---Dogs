@@ -5,23 +5,6 @@
   overflow: hidden;
 }
 
-.cardsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 800px; /* Adjust the maximum width as needed */
-  margin: 0 auto;
-}
-
-.card {
-  width: calc(25% - 20px); /* 25% width to display 4 cards per row */
-  height: 300px; /* Adjust the height as needed */
-  margin: 10px;
-  background-color: #f2f2f2;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .pagination {
   display: flex;
   justify-content: center;

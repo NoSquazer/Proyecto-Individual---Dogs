@@ -27,19 +27,8 @@
 }
 
 .divError {
+  height: 50;
   margin-bottom: 20px;
-}
-
-.pErrorActive {
-  color: #ff0000;
-  font-size: 12px;
-  margin-bottom: 5px;
-}
-
-.pErrorInactive {
-  color: #00ff00;
-  font-size: 12px;
-  margin-bottom: 5px;
 }
 
 label {

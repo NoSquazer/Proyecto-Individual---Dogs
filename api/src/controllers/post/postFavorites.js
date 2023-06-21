@@ -15,6 +15,7 @@ module.exports = async (req, res) => {
 
     if (!dogToFind) {
       const { data } = await axios.get(`http://localhost:3001/dogs/${dogId}`);
+
       const dogCreated = await Dog.create({
         id: data.id,
         name: data.name,
@@ -32,7 +33,8 @@ module.exports = async (req, res) => {
       });
 
       await dogCreated.addTemperaments(temperamentToAdd);
-      await user.addFavoriteDog(dogId);
+
+      await user.addFavoriteDog(dogCreated);
 
       return res.status(201).json({ message: "Dog added to favorites!" });
     } else {

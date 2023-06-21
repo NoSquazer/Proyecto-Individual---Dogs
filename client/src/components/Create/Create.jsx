@@ -83,8 +83,8 @@ const Create = () => {
           />
         )}
       </>
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className={styles.div_container}>
+        <form onSubmit={handleSubmit} className={styles.form_container}>
           <InputField
             type="text"
             name="name"
@@ -139,39 +139,43 @@ const Create = () => {
             )}
           </div>
           <label htmlFor="height">Height</label>
-          <input
-            type="text"
-            name="height.minHeight"
-            placeholder="Enter a minimum height."
-            value={dogData.height.minHeight}
-            onChange={(event) => handleOnChange(event, setDogData)}
-            onFocus={(event) => handleOnFocus(event, setFocus)}
-            onBlur={(event) => handleOnBlur(event, setFocus)}
-            className={
-              !focus.height
-                ? styles.input_default
-                : error.height.isMinor || error.height.isEmpty
-                ? styles.input_active_errors
-                : styles.input_inactive_errors
-            }
-          ></input>
-          to
-          <input
-            type="number"
-            name="height.maxHeight"
-            placeholder="Enter a maximum height."
-            value={dogData.height.maxHeight}
-            onChange={(event) => handleOnChange(event, setDogData)}
-            onFocus={(event) => handleOnFocus(event, setFocus)}
-            onBlur={(event) => handleOnBlur(event, setFocus)}
-            className={
-              !focus.height
-                ? styles.input_default
-                : error.height.isMinor || error.height.isEmpty
-                ? styles.input_active_errors
-                : styles.input_inactive_errors
-            }
-          ></input>
+          <div className={styles.div_double_inputs}>
+            <input
+              type="text"
+              name="height.minHeight"
+              placeholder="Min"
+              value={dogData.height.minHeight}
+              onChange={(event) => handleOnChange(event, setDogData)}
+              onFocus={(event) => handleOnFocus(event, setFocus)}
+              onBlur={(event) => handleOnBlur(event, setFocus)}
+              className={
+                styles.input_double_numbers
+                // !focus.height
+                //   ? styles.input_default
+                //   : error.height.isMinor || error.height.isEmpty
+                //   ? styles.input_active_errors
+                //   : styles.input_inactive_errors
+              }
+            ></input>
+
+            <input
+              type="number"
+              name="height.maxHeight"
+              placeholder="Max"
+              value={dogData.height.maxHeight}
+              onChange={(event) => handleOnChange(event, setDogData)}
+              onFocus={(event) => handleOnFocus(event, setFocus)}
+              onBlur={(event) => handleOnBlur(event, setFocus)}
+              className={
+                styles.input_double_numbers
+                // !focus.height
+                //   ? styles.input_default
+                //   : error.height.isMinor || error.height.isEmpty
+                //   ? styles.input_active_errors
+                //   : styles.input_inactive_errors
+              }
+            ></input>
+          </div>
           <div>
             {focus.weight && (
               <div className={styles.div_error}>
@@ -190,39 +194,43 @@ const Create = () => {
             )}
           </div>
           <label htmlFor="weight">Weight</label>
-          <input
-            type="number"
-            name="weight.minWeight"
-            placeholder="Enter a minimum weight."
-            value={dogData.weight.minWeight}
-            onChange={(event) => handleOnChange(event, setDogData)}
-            onFocus={(event) => handleOnFocus(event, setFocus)}
-            onBlur={(event) => handleOnBlur(event, setFocus)}
-            className={
-              !focus.weight
-                ? styles.input_default
-                : error.weight.isMinor || error.weight.isEmpty
-                ? styles.input_active_errors
-                : styles.input_inactive_errors
-            }
-          ></input>
-          to
-          <input
-            type="number"
-            name="weight.maxWeight"
-            placeholder="Enter a maximum weight."
-            value={dogData.weight.maxWeight}
-            onChange={(event) => handleOnChange(event, setDogData)}
-            onFocus={(event) => handleOnFocus(event, setFocus)}
-            onBlur={(event) => handleOnBlur(event, setFocus)}
-            className={
-              !focus.weight
-                ? styles.input_default
-                : error.weight.isMinor || error.weight.isEmpty
-                ? styles.input_active_errors
-                : styles.input_inactive_errors
-            }
-          ></input>
+          <div className={styles.div_double_inputs}>
+            <input
+              type="number"
+              name="weight.minWeight"
+              placeholder="Min"
+              value={dogData.weight.minWeight}
+              onChange={(event) => handleOnChange(event, setDogData)}
+              onFocus={(event) => handleOnFocus(event, setFocus)}
+              onBlur={(event) => handleOnBlur(event, setFocus)}
+              className={
+                styles.input_double_numbers
+                // !focus.weight
+                //   ? styles.input_default
+                //   : error.weight.isMinor || error.weight.isEmpty
+                //   ? styles.input_active_errors
+                //   : styles.input_inactive_errors
+              }
+            ></input>
+
+            <input
+              type="number"
+              name="weight.maxWeight"
+              placeholder="Max"
+              value={dogData.weight.maxWeight}
+              onChange={(event) => handleOnChange(event, setDogData)}
+              onFocus={(event) => handleOnFocus(event, setFocus)}
+              onBlur={(event) => handleOnBlur(event, setFocus)}
+              className={
+                styles.input_double_numbers
+                // !focus.weight
+                //   ? styles.input_default
+                //   : error.weight.isMinor || error.weight.isEmpty
+                //   ? styles.input_active_errors
+                //   : styles.input_inactive_errors
+              }
+            ></input>
+          </div>
           <div>
             {focus.lifeSpan && (
               <div className={styles.div_error}>
@@ -241,42 +249,50 @@ const Create = () => {
             )}
           </div>
           <label htmlFor="lifeSpan">Life span</label>
-          <input
-            type="number"
-            name="lifeSpan.minLifeSpan"
-            placeholder="Enter a minimum life span."
-            value={dogData.lifeSpan.minLifeSpan}
-            onChange={(event) => handleOnChange(event, setDogData)}
-            onFocus={(event) => handleOnFocus(event, setFocus)}
-            onBlur={(event) => handleOnBlur(event, setFocus)}
-            className={
-              !focus.lifeSpan
-                ? styles.input_default
-                : error.lifeSpan.isMinor || error.lifeSpan.isEmpty
-                ? styles.input_active_errors
-                : styles.input_inactive_errors
-            }
-          ></input>
-          to
-          <input
-            type="number"
-            name="lifeSpan.maxLifeSpan"
-            placeholder="Enter a maximum life span."
-            value={dogData.lifeSpan.maxLifeSpan}
-            onChange={(event) => handleOnChange(event, setDogData)}
-            onFocus={(event) => handleOnFocus(event, setFocus)}
-            onBlur={(event) => handleOnBlur(event, setFocus)}
-            className={
-              !focus.lifeSpan
-                ? styles.input_default
-                : error.lifeSpan.isMinor || error.lifeSpan.isEmpty
-                ? styles.input_active_errors
-                : styles.input_inactive_errors
-            }
-          ></input>
-          <h5>You can use click to add or remove a temperamentList!</h5>
+          <div className={styles.div_double_inputs}>
+            <input
+              type="number"
+              name="lifeSpan.minLifeSpan"
+              placeholder="Min"
+              value={dogData.lifeSpan.minLifeSpan}
+              onChange={(event) => handleOnChange(event, setDogData)}
+              onFocus={(event) => handleOnFocus(event, setFocus)}
+              onBlur={(event) => handleOnBlur(event, setFocus)}
+              className={
+                styles.input_double_numbers
+                // !focus.lifeSpan
+                //   ? styles.input_default
+                //   : error.lifeSpan.isMinor || error.lifeSpan.isEmpty
+                //   ? styles.input_active_errors
+                //   : styles.input_inactive_errors
+              }
+            ></input>
+
+            <input
+              type="number"
+              name="lifeSpan.maxLifeSpan"
+              placeholder="Max"
+              value={dogData.lifeSpan.maxLifeSpan}
+              onChange={(event) => handleOnChange(event, setDogData)}
+              onFocus={(event) => handleOnFocus(event, setFocus)}
+              onBlur={(event) => handleOnBlur(event, setFocus)}
+              className={
+                styles.input_double_numbers
+                // !focus.lifeSpan
+                //   ? styles.input_default
+                //   : error.lifeSpan.isMinor || error.lifeSpan.isEmpty
+                //   ? styles.input_active_errors
+                //   : styles.input_inactive_errors
+              }
+            ></input>
+          </div>
           <div>
-            <h5>All temperamentList</h5>
+            <h5 className={styles.h5_text}>
+              You can use click to add or remove a temperamentList!
+            </h5>
+          </div>
+          <div>
+            <h5 className={styles.h5_text}>All temperamentList</h5>
             <SelectOptions
               options={temperamentList}
               onClick={(event) =>
@@ -285,7 +301,7 @@ const Create = () => {
             />
           </div>
           <div>
-            <h5>Dog's temperamentList</h5>
+            <h5 className={styles.h5_text}>Dog's temperamentList</h5>
             <SelectOptions
               options={dogData.temperamentList}
               onClick={(event) =>
@@ -293,7 +309,12 @@ const Create = () => {
               }
             />
           </div>
-          <button disabled={handleDisabled(error)}>Create</button>
+          <button
+            disabled={handleDisabled(error)}
+            className={styles.button_create}
+          >
+            Create
+          </button>
         </form>
       </div>
     </>

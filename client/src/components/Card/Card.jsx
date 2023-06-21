@@ -53,7 +53,7 @@ const Card = ({ id, image, name, weight, temperament }) => {
         </NavLink>
       </div>
       <div className={styles.details}>
-        <h5 className={styles.h5_weight_temperament}>Weight: {weight}</h5>
+        <h5 className={styles.h5_weight_temperament}>Weight: {weight} Kg</h5>
         <h5 className={styles.h5_weight_temperament}>
           Temperament:
           {typeof temperament === "string"

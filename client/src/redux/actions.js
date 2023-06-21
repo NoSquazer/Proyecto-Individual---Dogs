@@ -48,8 +48,8 @@ export const addFavoriteDogs = (userId, dogId) => {
 
       return dispatch({ type: ADD_FAVORITE_DOGS, payload: data });
     };
-  } catch ({ message }) {
-    return message;
+  } catch (error) {
+    return console.log(error);
   }
 };
 
@@ -62,8 +62,8 @@ export const removeFavoriteDogs = (userId, dogId) => {
 
       return dispatch({ type: REMOVE_FAVORITE_DOGS, payload: dogId });
     };
-  } catch ({ request, response }) {
-    return message;
+  } catch (error) {
+    return console.log(error);
   }
 };
 
