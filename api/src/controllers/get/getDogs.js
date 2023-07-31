@@ -9,8 +9,8 @@ module.exports = async (req, res) => {
       `https://api.thedogapi.com/v1/breeds?api_key=${api_key}`
     );
 
-    const dogNamesList = data.map((value) => {
-      return { name: value.name };
+    const dogNamesList = data.map((dog) => {
+      return { name: dog.name };
     });
 
     return res.status(200).json(dogNamesList);

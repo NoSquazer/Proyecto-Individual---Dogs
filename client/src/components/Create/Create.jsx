@@ -43,6 +43,7 @@ const Create = () => {
     height: { isMinor: "", isEmpty: "" },
     weight: { isMinor: "", isEmpty: "" },
     lifeSpan: { isMinor: "", isEmpty: "" },
+    temperamentList: "",
   });
 
   const [focus, setFocus] = useState({
@@ -302,6 +303,11 @@ const Create = () => {
           </div>
           <div>
             <h5 className={styles.h5_text}>Dog's temperamentList</h5>
+            {error.temperamentList ? (
+              <ErrorInput active={true} message={error.temperamentList} />
+            ) : (
+              ""
+            )}
             <SelectOptions
               options={dogData.temperamentList}
               onClick={(event) =>

@@ -1,5 +1,5 @@
 const validateForm = (
-  { name, origin, image, height, weight, lifeSpan },
+  { name, origin, image, height, weight, lifeSpan, temperamentList },
   setError
 ) => {
   const newError = {
@@ -9,6 +9,7 @@ const validateForm = (
     height: { isMinor: "", isEmpty: "" },
     weight: { isMinor: "", isEmpty: "" },
     lifeSpan: { isMinor: "", isEmpty: "" },
+    temperamentList: "",
   };
 
   if (!/^[a-zA-Z]+$/.test(name)) {
@@ -54,6 +55,9 @@ const validateForm = (
     newError.lifeSpan.isEmpty = "Cannot be empty.";
   }
 
+  if (!temperamentList.length) {
+    newError.temperamentList = "The dogs temperament cannot be empty!";
+  }
   setError(newError);
 };
 
